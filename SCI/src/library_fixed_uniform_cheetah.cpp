@@ -10,7 +10,7 @@
 
 #define VERIFY_LAYERWISE
 #define LOG _LAYERWISE
-//#undef VERIFY_LAYERWISE // undefine this to turn OFF the verifcation
+#undef VERIFY_LAYERWISE // undefine this to turn OFF the verifcation
 //#undef LOG_LAYERWISE // undefine this to turn OFF the log
 
 #ifndef SCI_OT

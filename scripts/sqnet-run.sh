@@ -1,0 +1,1 @@
+bash scripts/run-client.sh cheetah sqnet & bash scripts/run-server.sh cheetah sqnet

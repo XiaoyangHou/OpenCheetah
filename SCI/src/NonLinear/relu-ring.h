@@ -152,7 +152,7 @@ public:
     }
     uint8_t *wrap = new uint8_t[num_cmps];
 
-    if (approx) {
+    if (approx && false) {
       // clang-format off
       // Ref: Kiwan Maeng and G. Edward Suh.
       // "Approximating ReLU on a Reduced Ring for Efficient MPC-based Private Inference"

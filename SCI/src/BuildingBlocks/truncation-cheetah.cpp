@@ -17,7 +17,7 @@ void Truncation::truncate(int32_t dim, uint64_t *inA, uint64_t *outB,
   uint64_t mask_upper =
       ((bw - shift) == 64 ? -1 : ((1ULL << (bw - shift)) - 1));
 
-  if (apply_msb0_heuristic) {
+  if (apply_msb0_heuristic && false) {
     // Ref "Secure evaluation of quantized neural networks"
     // https://eprint.iacr.org/2019/131.pdf
     if (party == sci::BOB) {

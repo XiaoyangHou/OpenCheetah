@@ -1069,17 +1069,6 @@ void FusedBatchNorm4411(int64_t s1, int64_t s2, int64_t s3, int64_t s4,
     ScaleUp(s4, biasArrScaledUp, biasExprScaleUpSf);
   }
 
-#if USE_CHEETAH
-  if (gemini::IsTwoPower(prime_mod)) {
-    int64_t n_ct_coeff_packing  = ((s2 * s3 + 4095) / 4096) * s4;
-    int64_t n_ct_bfv_packing  = ((s2 * s3 * s4 + 4095) / 4096) * 3;
-    if (n_ct_coeff_packing < n_ct_bfv_packing) {
-      BatchNorm(s1, s2, s3, s4, inArr, multArr, biasArrScaledUp, outputArr);
-      ClearMemSecret1(s4, biasArrScaledUp);
-      return;
-    }
-  }
-#endif
   int64_t inpSize = (((s1 * s2) * s3) * s4);
   uint64_t *inArrReshaped = make_array<uint64_t>(inpSize);
 
